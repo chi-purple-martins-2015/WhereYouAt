@@ -7,4 +7,12 @@ class GroupingsController < ApplicationController
     @grouping = @user.groupings.create(group_id: @group.id, user_id: @user.id, joined?: true)
     #redirect to group show page
   end
+
+  def destroy
+    @grouping = Grouping.find_by(id: params[:id])
+    @grouping.destroy
+    #redirect to user's show page
+  end
+
+
 end

@@ -21,13 +21,16 @@ class GroupsController < ApplicationController
     @group = Group.find_by(id: params[:id])
     @users = @group.users
     @admin = @group.admin
+    #helper method for joined/unjoined button?
   end
 
 
   def show_map
     @group = Group.find_by(id: params[:id])
     @users = @group.users
-    @admin = @group.admin
+  end
+
+  def invite
   end
 
   private
@@ -36,8 +39,5 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :event)
   end
 
-  def invite
-
-  end
 
 end

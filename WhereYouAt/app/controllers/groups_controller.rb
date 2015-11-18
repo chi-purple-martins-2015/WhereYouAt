@@ -15,7 +15,12 @@ class GroupsController < ApplicationController
     else
       @errors = @group.errors.full_messages
     end
+  end
 
+  def show
+    @group = Group.find_by(id: params[:id])
+    @users = @group.users
+    @admin = @group.admin
   end
 
   private

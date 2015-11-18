@@ -11,6 +11,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by(params[:id])
+    if @user.created_groups
+      @created_groups = @user.created_groups
+    end
+    if @user.groups
+      @groups = @user.groups
+    end
+  end
+
 
   private
 

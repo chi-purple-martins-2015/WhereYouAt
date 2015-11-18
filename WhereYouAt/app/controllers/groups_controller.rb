@@ -36,4 +36,8 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :event)
   end
 
+  def invite
+
+  end
+
 end

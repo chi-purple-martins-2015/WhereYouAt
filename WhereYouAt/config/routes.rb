@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  post '/groupings' => 'groupings#create'
+  post '/groups/:id/invite' => 'groupings#create'
+  get '/groups/:id/invite' => 'group#invite'
   get '/groups/:id/map' => 'groups#show_map'#, as: "map"
 
   # The priority is based upon order of creation: first created -> highest priority.

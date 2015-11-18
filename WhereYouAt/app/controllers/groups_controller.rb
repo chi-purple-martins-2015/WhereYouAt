@@ -23,6 +23,13 @@ class GroupsController < ApplicationController
     @admin = @group.admin
   end
 
+
+  def show_map
+    @group = Group.find_by(id: params[:id])
+    @users = @group.users
+    @admin = @group.admin
+  end
+
   private
 
   def group_params

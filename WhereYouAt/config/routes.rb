@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   resources :users
   resources :groups
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   post '/groupings' => 'groupings#create'
-  get '/groups/:id/map' => 'groups#show_map', as: "map"
+  get '/groups/:id/map' => 'groups#show_map'#, as: "map"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
